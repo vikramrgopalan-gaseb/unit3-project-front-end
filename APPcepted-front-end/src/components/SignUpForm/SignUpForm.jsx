@@ -24,12 +24,14 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         try {
             event.preventDefault()
+            //exceptions
             if(!username) {
                 setMessage('Please enter a username')
             } else if(!password) {
                 setMessage('Please enter a password')
             } else if(password !== passwordConfirm) {
                 setMessage('Passwords do not match')
+            //create new user with the signUp function in userServices. set that user as active, navigate back to the homepage
             } else {
                 const newUser = await signUp(formData)
                 setUser(newUser)
