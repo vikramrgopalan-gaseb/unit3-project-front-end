@@ -4,7 +4,7 @@ import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import TopicForm from './components/TopicForm/TopicForm';
-
+import createClass from './components/CreateClassForm/CreateClassForm'
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/create-topic' element={<TopicForm />} />
+        <Route path='/create-class' element={<createClass />} />
       </Routes>
     </>
   )
