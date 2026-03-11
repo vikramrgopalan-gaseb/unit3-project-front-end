@@ -22,7 +22,14 @@ const NavBar =() => {
                 <ul>
                     <li><Link to={'/sign-up'}>Sign Up</Link></li>
                 </ul>
-            )}
+            )
+            // ... else ...
+            (
+                <ul>
+                    <li><Link to={'/sign-in'}>Sign In</Link></li>
+                </ul>
+            )
+            }
         </nav>
     )
 }
