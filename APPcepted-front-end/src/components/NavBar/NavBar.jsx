@@ -9,13 +9,13 @@ const NavBar =() => {
         <nav>
             {/* universal links */}
             <ul>
-                <li></li>
+                <li><Link to={'/'}>Homepage</Link></li>
             </ul>
             
             {/* if user exits... */}
             {user ? (
                 <ul>
-                    <li></li>
+                    <li><Link to={'/create-class'}>Create New Class</Link></li>
                 </ul>
             // ... else ...
             ) : (
