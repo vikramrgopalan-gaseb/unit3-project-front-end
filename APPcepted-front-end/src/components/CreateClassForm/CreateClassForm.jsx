@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../../context/UserContext";
-import { createClass } from "../../services/creatClassService";
+import { createClass } from "../../services/ClassService";
 
 const createClass = () => {
     const navigate = useNavigate()
@@ -11,6 +11,7 @@ const createClass = () => {
         title: '',
         description: '',
         capacity: 0,
+        enrolment: []
     })
 
     const { title, description, capacity } = formData
@@ -18,7 +19,7 @@ const createClass = () => {
     //handlesubmit
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const newClass = await createClass(formData)
+        await createClass(formData)
         navigate('/')
     }
 
