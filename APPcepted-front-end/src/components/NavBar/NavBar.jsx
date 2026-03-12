@@ -15,7 +15,8 @@ const NavBar =() => {
             {/* if user exits... */}
             {user ? (
                 <ul>
-                    <li><Link to={'/create-class'}>Create New Class</Link></li>
+                    <li><Link to={'/classes/create-class'}>Create New Class</Link></li>
+                    <li><Link to={'/classes/my-classes'}>My Classes</Link></li>
                 </ul>
             // ... else ...
             ) : (
