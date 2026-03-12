@@ -1,10 +1,11 @@
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`
 
-const classes = async () => {
+const fetchClasses = async () => {
     try {
         //make a GET request based on the route in the back end server
-        const res = await fetch(`${BASE_URL}/classes`)
-        //no authentication needed here because this information should be visible to all visitors to the page, regardless of whether or not they have an account.
+        const res = await fetch(`${BASE_URL}/classes`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}
+        })
 
         //convert retrieved data into JSON. should be all classes
         const data = res.json()
@@ -13,6 +14,7 @@ const classes = async () => {
             throw new Error(error)
         }
 
+        return data
     } catch (error) {
         console.log(error)
         throw new Error(error)
@@ -21,7 +23,7 @@ const classes = async () => {
 }
 
 //do the same for topics
-const topics = async () => {
+const fetchTopics = async () => {
     try {
         const res = await fetch(`${BASE_URL}/topics`)
 
@@ -31,6 +33,7 @@ const topics = async () => {
             throw new Error(error)
         }
 
+        return data
     } catch (error) {
         console.log(error)
         throw new Error(error)
@@ -39,6 +42,6 @@ const topics = async () => {
 }
 
 export {
-    classes,
-    topics
+    fetchClasses,
+    fetchTopics,
 }
