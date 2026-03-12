@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import { Route, Routes } from 'react-router'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
+import HomePage from './components/HomePage/HomePage'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import SignInForm from './components/SignInForm/SignInForm'
 import TopicForm from './components/TopicForm/TopicForm';
@@ -38,6 +39,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
+        <Route path='/' element={<HomePage/>} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
         <Route path='/create-topic' element={<TopicForm />} />
