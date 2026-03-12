@@ -17,6 +17,7 @@ const NavBar =() => {
                 <ul>
                     <li><Link to={'/classes/create-class'}>Create New Class</Link></li>
                     <li><Link to={'/classes/my-classes'}>My Classes</Link></li>
+                    <li><Link to={'/topics/my-topics'}>My Topics</Link></li>
                 </ul>
             // ... else ...
             ) : (

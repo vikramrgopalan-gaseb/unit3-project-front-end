@@ -45,6 +45,7 @@ function App() {
         <Route path='/classes/my-classes' element={<MyClasses classes={classes} setSelectedClass={setSelectedClass}/>} />
         <Route path='/topics/my-topics' element={<MyTopics topics={topics} setSelectedTopic={setSelectedTopic}/>} />
         <Route path='/classes/my-classes/:classId' element={<EditMyClass selectedClass={selectedClass} />} />
+        <Route path='/topics/my-topics/:topicId' element={<EditMyTopic selectedTopic={selectedTopic} />} />
       </Routes>
     </>
   )
