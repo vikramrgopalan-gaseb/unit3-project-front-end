@@ -7,6 +7,7 @@ import SignInForm from './components/SignInForm/SignInForm'
 import TopicForm from './components/TopicForm/TopicForm';
 import createClass from './components/CreateClassForm/CreateClassForm'
 import MyClasses from './components/MyClasses/MyClasses'
+import MyTopics from './components/MyTopics/MyTopics'
 import EditMyClass from './components/EditMyClass/EditMyClass'
 
 import { fetchClasses, fetchTopics } from './services/listServices'
@@ -14,12 +15,22 @@ import { fetchClasses, fetchTopics } from './services/listServices'
 const [classes, setClasses] = useState([])
 const [selectedClass, setSelectedClass] = useState({})
 
+const [topics, setTopics] = useState([])
+const [selectedTopic, setSelectedTopic] = useState({})
+
 const fetchClassList = async () => {
   const fetchedClasses = await fetchClasses()
   setClasses(fetchedClasses)
 }
 
 fetchClassList()
+
+const fetchTopicList = async () => {
+  const fetchedTopics = await fetchTopics()
+  setTopics(fetchedTopics)
+}
+
+fetchTopicList()
 
 function App() {
 
@@ -32,6 +43,7 @@ function App() {
         <Route path='/create-topic' element={<TopicForm />} />
         <Route path='/classes/create-class' element={<createClass />} />
         <Route path='/classes/my-classes' element={<MyClasses classes={classes} setSelectedClass={setSelectedClass}/>} />
+        <Route path='/topics/my-topics' element={<MyTopics topics={topics} setSelectedTopic={setSelectedTopic}/>} />
         <Route path='/classes/my-classes/:classId' element={<EditMyClass selectedClass={selectedClass} />} />
       </Routes>
     </>
