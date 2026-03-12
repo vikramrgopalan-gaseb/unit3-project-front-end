@@ -33,6 +33,7 @@ function App() {
         <Route path='/classes/create-class' element={<createClass />} />
         <Route path='/classes/my-classes' element={<MyClasses classes={classes} setSelectedClass={setSelectedClass}/>} />
         <Route path='/classes/my-classes/:classId' element={<EditMyClass selectedClass={selectedClass} />} />
+        <Route path='/topics/my-topics/:topicId' element={<EditMyTopic selectedTopic={selectedTopic} />} />
       </Routes>
     </>
   )
