@@ -13,7 +13,7 @@ const MyClasses = (props) => {
 
     const mappedClasses = myClassList.map((aClass) => (
         <li key={aClass._id}>
-            <Link to={`/classes/my-classes/:${aClass._id}`} onClick={() => setSelectedClass(aClass)}>{aClass.title}</Link>
+            <Link to={`/classes/my-classes/${aClass._id}`} onClick={() => props.setSelectedClass(aClass)}>{aClass.title}</Link>
         </li>
         
     ))
