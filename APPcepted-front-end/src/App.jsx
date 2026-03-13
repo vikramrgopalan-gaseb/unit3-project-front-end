@@ -4,6 +4,7 @@ import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import HomePage from './components/HomePage/HomePage'
 import EditUserClass from './components/EditUserClass/EditUserClass'
+import EditUserTopic from './components/EditUserTopic/EditUserTopic'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import SignInForm from './components/SignInForm/SignInForm'
 import CreateTopic from './components/CreateTopicForm/CreateTopicForm'
@@ -44,6 +45,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage setSelectedClass={setSelectedClass} />} />
         <Route path='/:classId' element={<EditUserClass selectedClass={selectedClass} fetchClassList={fetchClassList}/>} />
+        <Route path='/:topicId' element={<EditUserTopic selectedTopic={selectedTopic} fetchTopicList={fetchTopicList}/>} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
         <Route path='/create-topic' element={<TopicForm />} />

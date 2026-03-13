@@ -53,8 +53,46 @@ const disenrollInClass = async (user, classId) => {
   }
 }
 
+const upvoteTopic = async (topicId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${topicId}/upvote`, {
+            method: 'POST',
+             headers: {
+        'content-Type': 'applications/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(user)
+        });
+
+
+        return res.json();
+    } catch (err) {
+        throw err;
+    }
+};
+
+const downvoteTopic = async (topicId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${topicId}/downvote`, {
+            method: 'POST',
+               headers: {
+        'content-Type': 'applications/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(user)
+        });
+
+        
+        return res.json();
+    } catch (err) {
+        throw err;
+    }
+};
+
 export {
     homeData,
     enrollInClass,
-    disenrollInClass
+    disenrollInClass,
+    upvoteTopic,
+    downvoteTopic,
 }
