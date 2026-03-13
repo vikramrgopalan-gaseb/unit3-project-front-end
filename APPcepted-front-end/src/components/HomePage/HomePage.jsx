@@ -43,7 +43,7 @@ const HomePage = () => {
                 {classes.map((c) => (
                     <div key={c._id} className="card">
                         <h3>{c.name}</h3>
-                        <p>Originator: {t.author?.username}</p>
+                        <p>Originator: {// .username}</p>
                     </div>
                 ))}
             </section>
@@ -54,7 +54,7 @@ const HomePage = () => {
                     <div key={t._id} className="card">
                         <h3>{t.title}</h3>
                         <p>{t.description}</p>
-                        <small>Requested by: {t.author?.username}</small>
+                        <small>Requested by: {// .username}</small>
                     </div>
                 ))}
             </section>

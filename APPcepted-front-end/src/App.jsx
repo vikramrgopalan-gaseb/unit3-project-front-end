@@ -5,11 +5,12 @@ import NavBar from './components/NavBar/NavBar'
 import HomePage from './components/HomePage/HomePage'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import SignInForm from './components/SignInForm/SignInForm'
-import TopicForm from './components/TopicForm/TopicForm';
+import CreateTopic from './components/CreateTopicForm/CreateTopicForm'
 import createClass from './components/CreateClassForm/CreateClassForm'
 import MyClasses from './components/MyClasses/MyClasses'
 import MyTopics from './components/MyTopics/MyTopics'
 import EditMyClass from './components/EditMyClass/EditMyClass'
+import EditMyTopic from './components/EditMyTopic/EditMyTopic'
 
 import { fetchClasses, fetchTopics } from './services/listServices'
 
@@ -42,7 +43,7 @@ function App() {
         <Route path='/' element={<HomePage/>} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
-        <Route path='/create-topic' element={<TopicForm />} />
+        <Route path='/topics/create-topic' element={<CreateTopic />} />
         <Route path='/classes/create-class' element={<createClass />} />
         <Route path='/classes/my-classes' element={<MyClasses classes={classes} setSelectedClass={setSelectedClass}/>} />
         <Route path='/topics/my-topics' element={<MyTopics topics={topics} setSelectedTopic={setSelectedTopic}/>} />
