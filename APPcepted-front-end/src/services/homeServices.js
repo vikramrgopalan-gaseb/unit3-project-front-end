@@ -17,6 +17,44 @@ const homeData = async () => {
   }
 };
 
+const enrollInClass = async (user, classId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${classId}/enroll`, {
+      method: 'PUT',
+      headers: {
+        'content-Type': 'applications/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(user)
+    })
+
+    return res.json()
+  } catch (error) {
+    console.log(error)
+    throw new Error(error)
+  }
+}
+
+const disenrollInClass = async (user, classId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${classId}/disenroll`, {
+      method: 'PUT',
+      headers: {
+        'content-Type': 'applications/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(user)
+    })
+
+    return res.json()
+  } catch (error) {
+    console.log(error)
+    throw new Error(error)
+  }
+}
+
 export {
-    homeData
+    homeData,
+    enrollInClass,
+    disenrollInClass
 }

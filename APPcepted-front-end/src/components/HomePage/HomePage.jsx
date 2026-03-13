@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { homeData } from '../../services/homeServices';
+import { Link } from 'react-router';
 
-const HomePage = () => {
-
+const HomePage = (props) => {
     // Store the data in arrays once it arrives from the backend
 
     const [topics, setTopics] = useState([]);
@@ -40,9 +40,9 @@ const HomePage = () => {
 
             <section>
                 <h2>Classes</h2>
-                {classes.map((c) => (
-                    <div key={c._id} className="card">
-                        <h3>{c.name}</h3>
+                {classes.map((aClass) => (
+                    <div key={aClass._id} className="card">
+                        <h3><Link to={`/${aClass._id}`} onClick={() => props.setSelectedClass(aClass)}>{aClass.title}</Link></h3>
                         <p>Originator: {t.author?.username}</p>
                     </div>
                 ))}

@@ -8,9 +8,7 @@ const EditMyClass = (props) => {
     const selectedClass = props.selectedClass
     const { user } = useContext(UserContext)
     const navigate = useNavigate()
-    useEffect(() => {
-        //fetch this class and setThisClass(this class)
-    })
+    
     const [formData, setFormData] = useState({
         originator: selectedClass.originator,
         title: selectedClass.title,
@@ -30,6 +28,7 @@ const EditMyClass = (props) => {
                 }
             }
             await editClass(newFormData, selectedClass._id)
+            props.fetchClassList()
             navigate('/classes/my-classes')
         }
 
@@ -82,7 +81,10 @@ const EditMyClass = (props) => {
             </div>
             <div>
                 <button type="submit">Submit changes</button>
-                <button onClick={() => deleteClass(selectedClass._id)}>Delete</button>
+                <button onClick={() => {
+                    deleteClass(selectedClass._id)
+                    props.fetchClassList()
+                }}>Delete</button>
                 <button onClick={() => navigate('/classes/my-classes')}>Cancel</button>
             </div>
         </form>
