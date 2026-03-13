@@ -33,7 +33,7 @@ const SignInForm = () => {
                 setUser(loggedInUser)
                 
                 // Send them to the homepage
-                navigate('/homepage')
+                navigate('/')
             }
         } catch (error) {
             

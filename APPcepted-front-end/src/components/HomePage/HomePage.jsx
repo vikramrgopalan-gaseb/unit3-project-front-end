@@ -40,6 +40,10 @@ const HomePage = (props) => {
 
             <section>
                 <h2>Classes</h2>
+                {classes.map((c) => (
+                    <div key={c._id} className="card">
+                        <h3>{c.name}</h3>
+                        <p>Originator: {// .username}</p>
                 {classes.map((aClass) => (
                     <div key={aClass._id} className="card">
                         <h3><Link to={`/${aClass._id}`} onClick={() => props.setSelectedClass(aClass)}>{aClass.title}</Link></h3>
@@ -54,7 +58,7 @@ const HomePage = (props) => {
                     <div key={t._id} className="card">
                         <h3>{t.title}</h3>
                         <p>{t.description}</p>
-                        <small>Requested by: {t.author?.username}</small>
+                        <small>Requested by: {// .username}</small>
                     </div>
                 ))}
             </section>

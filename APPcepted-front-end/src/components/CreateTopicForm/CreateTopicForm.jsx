@@ -5,7 +5,7 @@ import { createTopic } from "../../services/topicService";
 
 // Initialize the form
 
-const TopicForm = () => {
+const CreateTopic = () => {
 
     // Initilize empty array
 
@@ -52,4 +52,4 @@ const TopicForm = () => {
   );
 };
 
-export default TopicForm;
+export default CreateTopic;
