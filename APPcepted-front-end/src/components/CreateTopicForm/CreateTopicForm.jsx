@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useContext } from "react";
+import { useNavigate } from "react-router";
 import { UserContext } from "../../context/UserContext";
 import { createTopic } from "../../services/topicService";
 
@@ -11,9 +11,13 @@ const CreateTopic = () => {
 
   const [formData, setFormData] = useState({ title: '', description: '' });
 
+// HANDLE CHANGE
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+// HANDLE SUBMIT
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,11 +30,11 @@ const CreateTopic = () => {
     }
   };
 
-// Form fields that the user sees (rendered)
+// RENDERING
 
   return (
     <div className="form-container">
-      <h2>Learn Something New</h2>
+      <h2>I Want To Learn Something New</h2>
       <form onSubmit={handleSubmit}>
         <input
           name="title"
@@ -47,6 +51,7 @@ const CreateTopic = () => {
           required
         />
         <button type="submit">Submit Request</button>
+        <button onClick={() => navigate('/')}>Cancel</button>
       </form>
     </div>
   );
