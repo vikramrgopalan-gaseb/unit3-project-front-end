@@ -61,7 +61,7 @@ const HomePage = (props) => {
                     <div key={aTopic._id} className="card">
                         <h3><Link to={`/${aTopic._id}`} onClick={() => props.setSelectedTopic(aTopic)}>{aTopic.title}</Link></h3>
                         <p>{aTopic.description}</p>
-                        <small>Requested by: {findOriginator(aTopic.author)}</small>
+                        <p>Requested by: {findOriginator(aTopic.originator)}</p>
                     </div>
                 ))}
             </section>

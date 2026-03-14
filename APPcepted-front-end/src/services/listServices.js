@@ -25,7 +25,9 @@ const fetchClasses = async () => {
 //do the same for topics
 const fetchTopics = async () => {
     try {
-        const res = await fetch(`${BASE_URL}/topics`)
+        const res = await fetch(`${BASE_URL}/topics`, {
+             headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}
+        })
 
         const data = res.json()
 
