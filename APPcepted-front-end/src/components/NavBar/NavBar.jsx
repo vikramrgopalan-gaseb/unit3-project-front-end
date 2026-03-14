@@ -1,9 +1,15 @@
+// IMPORTS
+
 import { Link } from "react-router";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
+// CREATE NAVBAR VARIABLE
+
 const NavBar =() => {
     const { user, setUser } = useContext(UserContext)
+
+    // SIGN OUT VARIABLE
 
     const handleSignOut = () => {
         localStorage.removeItem('token')
