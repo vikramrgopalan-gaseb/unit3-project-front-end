@@ -28,6 +28,8 @@ const SignUpForm = () => {
                 setMessage('Please enter a username')
             } else if(!password) {
                 setMessage('Please enter a password')
+            } else if(password.length < 6) {
+                setMessage('Password must be at least 6 characters long')
             } else if(password !== passwordConfirm) {
                 setMessage('Passwords do not match')
             } else {

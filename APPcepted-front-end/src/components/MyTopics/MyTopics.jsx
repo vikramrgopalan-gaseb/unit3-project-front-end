@@ -7,13 +7,13 @@ const MyTopics = (props) => {
     const [myTopicList, setMyTopicList] = useState([])
 
     useEffect(() => {
-        const filteredTopicList = props.topics.filter((aTopic) => aTopic.originator === user._id)
+        const filteredTopicList = props.topics.filter((aTopic) => aTopic.author === user._id)
         setMyTopicList(filteredTopicList)
     }, [myTopicList])
 
     const mappedTopics = myTopicList.map((aTopic) => (
         <li key={aTopic._id}>
-            <Link to={`/topics/my-topics/:${aTopic._id}`} onClick={() => setSelectedTopic(aTopic)}>{aTopic.title}</Link>
+            <Link to={`/topics/my-topics/${aTopic._id}`} onClick={() => props.setSelectedTopic(aTopic)}>{aTopic.title}</Link>
         </li>
         
     ))
