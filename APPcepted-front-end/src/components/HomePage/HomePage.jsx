@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 const HomePage = (props) => {
     // Store the data in arrays once it arrives from the backend
 
+    const [allUsers, setAllUsers] = useState([]);
     const [topics, setTopics] = useState([]);
     const [classes, setClasses] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ const HomePage = (props) => {
                 
                 // Update arrays with the results
 
+                setAllUsers(data.allUsers)
                 setTopics(data.topics);
                 setClasses(data.classes);
 
@@ -34,31 +36,32 @@ const HomePage = (props) => {
 
     if (loading) return <p>Loading classes and topics...</p>;
 
+    const findOriginator= (aUserId) => {
+        const originatorUser = allUsers.find((aUser) => aUser._id === aUserId)
+        return (originatorUser.username)
+    }
+
     return (
         <main>
             <h1>APPcepted</h1>
 
             <section>
-                <h2>Classes</h2>
-                {classes.map((c) => (
-                    <div key={c._id} className="card">
-                        <h3>{c.name}</h3>
-                        <p>Originator: {// .username}</p>
+                <h2>Classes</h2>                
                 {classes.map((aClass) => (
                     <div key={aClass._id} className="card">
                         <h3><Link to={`/${aClass._id}`} onClick={() => props.setSelectedClass(aClass)}>{aClass.title}</Link></h3>
-                        <p>Originator: {t.author?.username}</p>
+                        <p>Originator: {findOriginator(aClass.originator)}</p>
                     </div>
                 ))}
             </section>
 
             <section>
                 <h2>Topics</h2>
-                {topics.map((t) => (
-                    <div key={t._id} className="card">
-                        <h3>{t.title}</h3>
-                        <p>{t.description}</p>
-                        <small>Requested by: {// .username}</small>
+                {topics.map((aTopic) => (
+                    <div key={aTopic._id} className="card">
+                        <h3><Link to={`/${aTopic._id}`} onClick={() => props.setSelectedTopic(aTopic)}>{aTopic.title}</Link></h3>
+                        <p>{aTopic.description}</p>
+                        <small>Requested by: {findOriginator(aTopic.author)}</small>
                     </div>
                 ))}
             </section>

@@ -8,7 +8,7 @@ import EditUserTopic from './components/EditUserTopic/EditUserTopic'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import SignInForm from './components/SignInForm/SignInForm'
 import CreateTopic from './components/CreateTopicForm/CreateTopicForm'
-import createClass from './components/CreateClassForm/CreateClassForm'
+import CreateClass from './components/CreateClassForm/CreateClassForm'
 import MyClasses from './components/MyClasses/MyClasses'
 import MyTopics from './components/MyTopics/MyTopics'
 import EditMyClass from './components/EditMyClass/EditMyClass'
@@ -43,12 +43,12 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path='/' element={<HomePage setSelectedClass={setSelectedClass} />} />
+        <Route path='/' element={<HomePage setSelectedClass={setSelectedClass} setSelectedTopic={setSelectedTopic} />} />
         <Route path='/:classId' element={<EditUserClass selectedClass={selectedClass} fetchClassList={fetchClassList}/>} />
         <Route path='/:topicId' element={<EditUserTopic selectedTopic={selectedTopic} fetchTopicList={fetchTopicList}/>} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
-        <Route path='/create-topic' element={<TopicForm />} />
+        <Route path='/create-topic' element={<CreateTopic />} />
         <Route path='/classes/create-class' element={<CreateClass />} />
         <Route path='/classes/my-classes' element={<MyClasses classes={classes} setSelectedClass={setSelectedClass} />} />
         <Route path='/topics/my-topics' element={<MyTopics topics={topics} setSelectedTopic={setSelectedTopic} />} />

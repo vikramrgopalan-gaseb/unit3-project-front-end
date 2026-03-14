@@ -5,6 +5,11 @@ import { UserContext } from "../../context/UserContext";
 const NavBar =() => {
     const { user, setUser } = useContext(UserContext)
 
+    const handleSignOut = () => {
+        localStorage.removeItem('token')
+        setUser(null)
+    }
+
     return (
         <nav>
             {/* universal links */}
@@ -19,6 +24,7 @@ const NavBar =() => {
                     <li><Link to={'/classes/my-classes'}>My Classes</Link></li>
                     <li><Link to={'/topics/create-topic'}>Create New Topic</Link></li>
                     <li><Link to={'/topics/my-topics'}>My Topics</Link></li>
+                    <li><Link to={'/'} onClick={handleSignOut}>Sign out</Link></li>
                 </ul>
             // ... else ...
             ) : (
