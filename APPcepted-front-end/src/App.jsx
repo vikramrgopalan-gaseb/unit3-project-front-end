@@ -35,10 +35,8 @@ function App() {
   }
 
   useEffect(() => {
-    // async () => {
-      /*await*/ fetchClassList()
-      /*await*/ fetchTopicList()      
-    // }
+      fetchClassList()
+      fetchTopicList()
   }, [])
 
   return (
