@@ -9,7 +9,10 @@ const CreateTopic = () => {
 
     // Initilize empty array
 
-  const [formData, setFormData] = useState({ title: '', description: '' });
+  const [formData, setFormData] = useState({
+    originator: `${user._id}`, 
+    title: '', 
+    description: '' });
 
 // HANDLE CHANGE
 
