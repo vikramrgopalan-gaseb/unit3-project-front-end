@@ -48,7 +48,7 @@ function App() {
         <Route path='/:topicId' element={<EditUserTopic selectedTopic={selectedTopic} fetchTopicList={fetchTopicList}/>} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
-        <Route path='/create-topic' element={<CreateTopic />} />
+        <Route path='/topics/create-topic' element={<CreateTopic />} />
         <Route path='/classes/create-class' element={<CreateClass />} />
         <Route path='/classes/my-classes' element={<MyClasses classes={classes} setSelectedClass={setSelectedClass} />} />
         <Route path='/topics/my-topics' element={<MyTopics topics={topics} setSelectedTopic={setSelectedTopic} />} />
