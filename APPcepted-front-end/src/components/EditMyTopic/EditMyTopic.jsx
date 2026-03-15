@@ -22,8 +22,16 @@ const EditMyTopic = (props) => {
         setFormData({ ...formData, [event.target.name]: event.target.value })
     }
 
+    const handleSubmit = async (event) => {
+            event.preventDefault()
+            let newFormData = {...formData}
+            await editTopic(newFormData, selectedTopic._id)
+            props.fetchTopicList()
+            navigate('/topics/my-topics')
+        }
+
     return (
-        <form onChange={handleChange}>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="title">Title: </label>
                 <input 

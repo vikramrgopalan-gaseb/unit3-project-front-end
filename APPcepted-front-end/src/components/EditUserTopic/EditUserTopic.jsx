@@ -20,7 +20,7 @@ const EditUserTopic = (props) => {
         if (!user) return alert("You must be logged in to vote!");
         try {
             await downvoteTopic(selectedTopic._id);
-            fetchTopicList(); // Refresh the parent's list
+            fetchTopicList();
         } catch (err) {
             console.error("Downvote failed", err);
         }
