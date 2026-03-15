@@ -32,7 +32,7 @@ const HomePage = (props) => {
         };
 
         fetchAllData();
-    });
+    }, []);
 
     if (loading) return <p>Loading classes and topics...</p>;
 

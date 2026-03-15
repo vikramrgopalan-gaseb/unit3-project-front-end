@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../../context/UserContext";
-import { createClass } from "../../services/ClassService";
+import { createClass } from "../../services/ClassServices";
 
-const createClass = () => {
+const postNewClass = () => {
     const navigate = useNavigate()
     const { user } = useContext(UserContext)
     const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const createClass = () => {
     //handlesubmit
     const handleSubmit = async (event) => {
         event.preventDefault()
-        await createClass(formData)
+        await postNewClass(formData)
         navigate('/')
     }
 
