@@ -14,10 +14,9 @@ const EditMyTopic = (props) => {
      const [formData, setFormData] = useState({
         title: selectedTopic.title,
         description: selectedTopic.description,
-        author: selectedTopic.author,
     })
 
-    const { title, description, author } = formData
+    const { title, description } = formData
 
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value })
@@ -43,17 +42,6 @@ const EditMyTopic = (props) => {
                     id="desctiption"
                     value={description}
                     name="description"
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label htmlFor="author">Author: </label>
-                <input 
-                    type="string"
-                    id="author"
-                    value={author}
-                    name="author"
                     onChange={handleChange}
                     required
                 />
