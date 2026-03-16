@@ -22,7 +22,7 @@ const enrollInClass = async (user, classId) => {
     const res = await fetch(`${BASE_URL}/${classId}/enroll`, {
       method: 'PUT',
       headers: {
-        'content-Type': 'applications/json',
+        'content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(user)
@@ -40,7 +40,7 @@ const disenrollInClass = async (user, classId) => {
     const res = await fetch(`${BASE_URL}/${classId}/disenroll`, {
       method: 'PUT',
       headers: {
-        'content-Type': 'applications/json',
+        'content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(user)
@@ -58,7 +58,7 @@ const upvoteTopic = async (topicId) => {
         const res = await fetch(`${BASE_URL}/${topicId}/upvote`, {
             method: 'POST',
              headers: {
-        'content-Type': 'applications/json',
+        'content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(user)
@@ -76,7 +76,7 @@ const downvoteTopic = async (topicId) => {
         const res = await fetch(`${BASE_URL}/${topicId}/downvote`, {
             method: 'POST',
                headers: {
-        'content-Type': 'applications/json',
+        'content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(user)

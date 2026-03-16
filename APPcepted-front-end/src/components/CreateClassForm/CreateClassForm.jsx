@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../../context/UserContext";
-import { createClass } from "../../services/ClassServices";
+import { postNewClass } from "../../services/ClassServices";
 
-const postNewClass = () => {
+const CreateNewClass = (props) => {
     const navigate = useNavigate()
     const { user } = useContext(UserContext)
     const [formData, setFormData] = useState({
@@ -20,7 +20,8 @@ const postNewClass = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         await postNewClass(formData)
-        navigate('/')
+        props.fetchClassList()
+        navigate('/classes/my-classes')
     }
 
     //handlechange
@@ -44,14 +45,14 @@ const postNewClass = () => {
             </div>
             <div>
                 <label htmlFor="description">Description: </label>
-                <input 
+                <textarea
                     type="text"
                     id="desctiption"
                     value={description}
                     name="description"
                     onChange={handleChange}
                     required
-                />
+                ></textarea>
             </div>
             <div>
                 <label htmlFor="capacity">Class Size: </label>
@@ -72,4 +73,4 @@ const postNewClass = () => {
     )
 }
 
-export default createClass
+export default CreateNewClass

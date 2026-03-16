@@ -7,9 +7,9 @@ const MyTopics = (props) => {
     const [myTopicList, setMyTopicList] = useState([])
 
     useEffect(() => {
-        const filteredTopicList = props.topics.filter((aTopic) => aTopic.author === user._id)
+        const filteredTopicList = props.topics.filter((aTopic) => aTopic.originator === user._id)
         setMyTopicList(filteredTopicList)
-    }, [myTopicList])
+    }, [props.topics])
 
     const mappedTopics = myTopicList.map((aTopic) => (
         <li key={aTopic._id}>
@@ -20,6 +20,7 @@ const MyTopics = (props) => {
 
     return (
         <main>
+            <h2>Your Topics</h2>
             {mappedTopics}
         </main>
     )

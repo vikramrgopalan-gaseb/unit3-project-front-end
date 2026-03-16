@@ -9,7 +9,7 @@ const MyClasses = (props) => {
     useEffect(() => {
         const filteredClassList = props.classes.filter((aClass) => aClass.originator === user._id)
         setMyClassList(filteredClassList)
-    }, [myClassList])
+    }, [props.classes])
 
     const mappedClasses = myClassList.map((aClass) => (
         <li key={aClass._id}>
@@ -20,6 +20,7 @@ const MyClasses = (props) => {
 
     return (
         <main>
+            <h2>Your Classes</h2>
             {mappedClasses}
         </main>
     )

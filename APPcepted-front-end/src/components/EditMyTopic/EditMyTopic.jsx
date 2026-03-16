@@ -45,14 +45,14 @@ const EditMyTopic = (props) => {
             </div>
             <div>
                 <label htmlFor="description">Description: </label>
-                <input 
+                <textarea 
                     type="text"
                     id="desctiption"
                     value={description}
                     name="description"
                     onChange={handleChange}
                     required
-                />
+                ></textarea>
             </div>
             <div>
                 <button type="submit">Submit changes</button>
