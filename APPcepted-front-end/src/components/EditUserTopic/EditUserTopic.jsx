@@ -27,11 +27,11 @@ const EditUserTopic = (props) => {
     };
 
     return (
-        <main>
+        <main className="topic-user-page">
             <h2>{selectedTopic?.title}</h2>
             <p>{selectedTopic?.description}</p>
             
-            <div>
+            <div className="voting-section">
                 <p>Upvotes: {selectedTopic?.upvotes?.length || 0}</p>
                 <button onClick={handleUpvote}
                 disabled={!user}
@@ -39,7 +39,7 @@ const EditUserTopic = (props) => {
                 >Upvote</button>
             </div>
 
-            <div>
+            <div className="voting-section">
                 <p>Downvotes: {selectedTopic?.downvotes?.length || 0}</p>
                 <button onClick={handleDownvote}
                 disabled={!user}

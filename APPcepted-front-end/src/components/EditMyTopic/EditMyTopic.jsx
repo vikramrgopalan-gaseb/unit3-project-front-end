@@ -31,7 +31,7 @@ const EditMyTopic = (props) => {
         }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="edit-topic-form">
             <div>
                 <label htmlFor="title">Title: </label>
                 <input 
@@ -54,7 +54,7 @@ const EditMyTopic = (props) => {
                     required
                 />
             </div>
-            <div>
+            <div className="edit-topic-button">
                 <button type="submit">Submit changes</button>
                 <button onClick={() => deleteTopic(selectedTopic._id)}>Delete</button>
                 <button onClick={() => navigate('/topics/my-topics')}>Cancel</button>
