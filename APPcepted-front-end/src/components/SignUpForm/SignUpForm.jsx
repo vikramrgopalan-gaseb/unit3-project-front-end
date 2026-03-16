@@ -44,11 +44,11 @@ const SignUpForm = () => {
     }
     
     return (
-        <main>
+        <main className="sign-up">
             <h1>Sign Up</h1>
             <p>{message}</p>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="username-field">
                     <label htmlFor="username">Username: </label>
                     <input 
                         type="text"
@@ -59,7 +59,7 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="password-field">
                     <label htmlFor="password">Password: </label>
                     <input 
                         type="password"
@@ -70,7 +70,7 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="confirm-password-field">
                     <label htmlFor="passwordConfirm">Confirm Password: </label>
                     <input 
                         type="password"
@@ -81,7 +81,7 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="auth-button">
                     <button type="submit">Submit</button>
                     <button onClick={() => navigate('/')}>Cancel</button>
                 </div>

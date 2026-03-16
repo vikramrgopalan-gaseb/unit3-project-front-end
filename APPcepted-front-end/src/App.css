@@ -18,6 +18,50 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.nav-bar {
+  display: flex;
+  color: lightskyblue;
+  flex-direction: row;
+}
+
+.universal-link {
+  color: purple;
+}
+
+.user-links {
+  color: aquamarine;
+}
+
+.auth-links {
+  color: chartreuse;
+}
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-field {
+  color: chartreuse;
+}
+
+.password-field {
+  color: chartreuse;
+}
+
+.auth-button {
+  color: purple;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm-password-field {
+  color: chartreuse;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
