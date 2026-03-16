@@ -17,15 +17,15 @@ const NavBar =() => {
     }
 
     return (
-        <nav>
+        <nav className='nav-bar'>
             {/* universal links */}
-            <ul>
+            <ul className='universal-link'>
                 <li><Link to={'/'}>Homepage</Link></li>
             </ul>
             
             {/* if user exits... */}
             {user ? (
-                <ul>
+                <ul className='user-links'>
                     <li><Link to={'/classes/create-class'}>Create New Class</Link></li>
                     <li><Link to={'/classes/my-classes'}>My Classes</Link></li>
                     <li><Link to={'/topics/create-topic'}>Create New Topic</Link></li>
@@ -34,7 +34,7 @@ const NavBar =() => {
                 </ul>
             // ... else ...
             ) : (
-                <ul>
+                <ul className='auth-links'>
                     <li><Link to={'/sign-in'}>Sign In</Link></li>
                     <li><Link to={'/sign-up'}>Sign Up</Link></li>
                 </ul>

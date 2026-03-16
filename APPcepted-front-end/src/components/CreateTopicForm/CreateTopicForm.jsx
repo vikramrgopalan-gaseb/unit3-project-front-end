@@ -38,9 +38,9 @@ const CreateTopic = (props) => {
 // RENDERING
 
   return (
-    <div className="form-container">
+    <div className="topic-form-container">
       <h2>I Want To Learn Something New</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="topic-form">
         <input
           name="title"
           placeholder="Topic Title"
@@ -55,8 +55,10 @@ const CreateTopic = (props) => {
           onChange={handleChange}
           required
         />
+        <div className="create-topic-button">
         <button type="submit">Submit Request</button>
         <button onClick={() => navigate('/')}>Cancel</button>
+        </div>
       </form>
     </div>
   );

@@ -45,7 +45,7 @@ const HomePage = (props) => {
         <main>
             <h1>APPcepted</h1>
 
-            <section>
+            <section className='classes-homepage'>
                 <h2>Classes</h2>                
                 {classes.map((aClass) => (
                     <div key={aClass._id} className="card">
@@ -55,7 +55,7 @@ const HomePage = (props) => {
                 ))}
             </section>
 
-            <section>
+            <section className='topics-homepage'>
                 <h2>Topics</h2>
                 {topics.map((aTopic) => (
                     <div key={aTopic._id} className="card">
