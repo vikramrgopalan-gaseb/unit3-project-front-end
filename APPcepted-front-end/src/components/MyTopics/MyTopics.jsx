@@ -19,7 +19,7 @@ const MyTopics = (props) => {
     ))
 
     return (
-        <main>
+        <main className="my-topics">
             {mappedTopics}
         </main>
     )
