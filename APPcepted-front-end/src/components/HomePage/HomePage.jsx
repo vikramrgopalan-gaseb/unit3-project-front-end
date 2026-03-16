@@ -32,7 +32,7 @@ const HomePage = (props) => {
         };
 
         fetchAllData();
-    });
+    }, []);
 
     if (loading) return <p>Loading classes and topics...</p>;
 
@@ -49,7 +49,7 @@ const HomePage = (props) => {
                 <h2>Classes</h2>                
                 {classes.map((aClass) => (
                     <div key={aClass._id} className="card">
-                        <h3><Link to={`/${aClass._id}`} onClick={() => props.setSelectedClass(aClass)}>{aClass.title}</Link></h3>
+                        <h3><Link to={`/classes/homepage/${aClass._id}`} onClick={() => props.setSelectedClass(aClass)}>{aClass.title}</Link></h3>
                         <p>Originator: {findOriginator(aClass.originator)}</p>
                     </div>
                 ))}
@@ -59,7 +59,7 @@ const HomePage = (props) => {
                 <h2>Topics</h2>
                 {topics.map((aTopic) => (
                     <div key={aTopic._id} className="card">
-                        <h3><Link to={`/${aTopic._id}`} onClick={() => props.setSelectedTopic(aTopic)}>{aTopic.title}</Link></h3>
+                        <h3><Link to={`/topics/homepage/${aTopic._id}`} onClick={() => props.setSelectedTopic(aTopic)}>{aTopic.title}</Link></h3>
                         <p>{aTopic.description}</p>
                         <p>Requested by: {findOriginator(aTopic.originator)}</p>
                     </div>

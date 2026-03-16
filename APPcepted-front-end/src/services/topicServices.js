@@ -6,23 +6,15 @@ const createTopic = async (topicData) => {
   
   try {
 
-    const response = await fetch(`${BASE_URL}/topics/create-topic`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(topicData),
-  });
+    const res = await fetch(`${BASE_URL}/topics/create-topic`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(topicData),
+    });
 
-    if (!response.ok) {
-      throw new Error(`Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-
-  } 
- 
- catch (error) {
-    throw error;
+    return res.json()
+  } catch (error) {
+    throw new Error(error);
   }
 };
 
@@ -33,7 +25,7 @@ const editTopic = async (formData, topicId) => {
         const res = await fetch(`${BASE_URL}/topics/${topicId}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'applications/json',
+                'Content-Type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(formData)

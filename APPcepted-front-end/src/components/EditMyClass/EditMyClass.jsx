@@ -51,14 +51,14 @@ const EditMyClass = (props) => {
             </div>
             <div>
                 <label htmlFor="description">Description: </label>
-                <input 
+                <textarea 
                     type="text"
                     id="desctiption"
                     value={description}
                     name="description"
                     onChange={handleChange}
                     required
-                />
+                ></textarea>
             </div>
             <div>
                 <label htmlFor="capacity">Class Size: </label>
@@ -84,6 +84,7 @@ const EditMyClass = (props) => {
                 <button onClick={() => {
                     deleteClass(selectedClass._id)
                     props.fetchClassList()
+                    navigate('/classes/my-classes')
                 }}>Delete</button>
                 <button onClick={() => navigate('/classes/my-classes')}>Cancel</button>
             </div>

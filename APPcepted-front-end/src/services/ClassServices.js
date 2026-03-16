@@ -1,23 +1,17 @@
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`
 
-const createClass = async (formData) => {
+const postNewClass = async (formData) => {
     try {
         const res = await fetch(`${BASE_URL}/classes/create-class`, {
             method: 'POST',
             headers: { 
-                'Content-Type': 'applications/json',
+                'Content-Type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(formData)
         })
 
-        const data = await res.json()
-
-        if(data.error) {
-            throw new Error(error)
-        }
-        
-        throw new Error ('invalid response from server')
+        return res.json()
     } catch (error) {
         console.log(error)
         throw new Error(error)
@@ -30,7 +24,7 @@ const editClass = async (formData, classId) => {
         const res = await fetch(`${BASE_URL}/classes/${classId}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'applications/json',
+                'Content-Type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(formData)
@@ -61,7 +55,7 @@ const deleteClass = async (classId) => {
 }
 
 export {
-    createClass,
+    postNewClass,
     editClass,
     deleteClass,
 }

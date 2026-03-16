@@ -1,12 +1,13 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../../context/UserContext";
-import { createTopic } from "../../services/topicService";
+import { createTopic } from "../../services/topicServices";
 
 // Initialize the form
 
-const CreateTopic = () => {
-
+const CreateTopic = (props) => {
+  const navigate = useNavigate()
+  const { user } = useContext(UserContext)
     // Initilize empty array
 
   const [formData, setFormData] = useState({
@@ -28,6 +29,7 @@ const CreateTopic = () => {
       await createTopic(formData);
       alert('Topic saved!');
       setFormData({ title: '', description: '' });
+      props.fetchTopicList();
     } catch (err) {
       alert('Failed to save: ' + err.message);
     }

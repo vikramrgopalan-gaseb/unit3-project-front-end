@@ -32,6 +32,7 @@ const SignInForm = () => {
                 setMessage('Please enter both username and password')
             } else {
                 // Call the signin function from authServices
+                console.log(formData)
                 const signedInUser = await signIn(formData)
                 
                 // Set the global user state
