@@ -3,9 +3,14 @@ import { UserContext } from "../../context/UserContext";
 import { enrollInClass, disenrollInClass } from "../../services/homeServices";
 
 const EditUserClass = (props) => {
-    const selectedClass = props.selectedClass
+    let selectedClass = props.selectedClass
     const { user } = useContext(UserContext)
 
+    useEffect(() => {
+        const updatedSelectedClass = props.classes.find((foundClass) => foundClass._id === selectedClass._id)
+        props.setSelectedClass(updatedSelectedClass)
+        selectedClass = updatedSelectedClass
+    }, [props.classes])
     return (
         <main>
             <h2>{selectedClass.title}</h2>
@@ -30,13 +35,13 @@ const EditUserClass = (props) => {
             <div>
                 <h3>Roster:</h3>
                 {/* if there are any students enrolled, list their usernames */}
-                {selectedClass.enrollment.length > 0 ? (
+                {selectedClass.enrollment.length ? (
                     <ul>
                         {selectedClass.enrollment.map(student => (
                             <li key={student._id}>
                                 {student.username}
                                 {/* if the enrolled student is the logged in student, render a disenroll button */}
-                                {key === user._id ? (
+                                {student._id === user._id ? (
                                     <button onClick={() => {
                                         disenrollInClass(user, selectedClass._id)
                                         props.fetchClassList()
