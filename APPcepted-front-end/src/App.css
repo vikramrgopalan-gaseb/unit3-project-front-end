@@ -128,11 +128,25 @@
   flex-direction: row;
 }
 
+.universal-link {
+  color: aquamarine;
+}
+
+.user-links {
+  color: aquamarine;
+}
+
 .homepage-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://content.presentermedia.com/files/clipart/00002000/2995/blank_bulletin_board_800_wht.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 50vh;
 }
 
 .classes-and-topics-list {
@@ -195,8 +209,36 @@
   align-items: center;
 }
 
-.my-topic-list {
+.my-topics-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.create-class-description {
+  width: 300px;
+  height: 150px; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+.edit-class-description {
+  width: 300px;
+  height: 150px; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+.create-topic-description {
+  width: 300px;
+  height: 150px; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+.edit-topic-description {
+  width: 300px;
+  height: 150px; 
+  padding: 10px; 
+  box-sizing: border-box; 
 }
