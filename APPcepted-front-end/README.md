@@ -17,6 +17,9 @@ If you are developing a production application, we recommend using TypeScript wi
 
 =================================================================================================================================================================================================================
 
+<img width="1404" height="698" alt="image" src="https://github.com/user-attachments/assets/e7e73bae-d75a-4e24-b0fb-21ab2415d560" />
+
+
 # APPcepted
 
 ### Background
