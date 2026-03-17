@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { Route, Routes } from 'react-router'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
@@ -44,8 +44,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<HomePage setSelectedClass={setSelectedClass} setSelectedTopic={setSelectedTopic} />} />
-        <Route path='/classes/homepage/:classId' element={<EditUserClass selectedClass={selectedClass} fetchClassList={fetchClassList}/>} />
-        <Route path='/topics/homepage/:topicId' element={<EditUserTopic selectedTopic={selectedTopic} fetchTopicList={fetchTopicList}/>} />
+        <Route path='/classes/homepage/:classId' element={<EditUserClass selectedClass={selectedClass} setSelectedClass={setSelectedClass} classes={classes} fetchClassList={fetchClassList}/>} />
+        <Route path='/topics/homepage/:topicId' element={<EditUserTopic selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topics={topics} fetchTopicList={fetchTopicList}/>} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/sign-in' element={<SignInForm />} />
         <Route path='/topics/create-topic' element={<CreateTopic fetchTopicList={fetchTopicList}/>} />

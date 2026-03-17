@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/`;
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`;
 
 const homeData = async () => {
   try {
@@ -22,13 +22,15 @@ const enrollInClass = async (user, classId) => {
     const res = await fetch(`${BASE_URL}/${classId}/enroll`, {
       method: 'PUT',
       headers: {
-        'content-Type': 'application/json',
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(user)
     })
 
-    return res.json()
+    const data = await res.json()
+
+    return data
   } catch (error) {
     console.log(error)
     throw new Error(error)
@@ -40,50 +42,54 @@ const disenrollInClass = async (user, classId) => {
     const res = await fetch(`${BASE_URL}/${classId}/disenroll`, {
       method: 'PUT',
       headers: {
-        'content-Type': 'application/json',
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: JSON.stringify(user)
     })
 
-    return res.json()
+    const data = await res.json()
+
+    return data
   } catch (error) {
     console.log(error)
     throw new Error(error)
   }
 }
 
-const upvoteTopic = async (topicId) => {
+const upvoteTopic = async (user, topicId) => {
     try {
         const res = await fetch(`${BASE_URL}/${topicId}/upvote`, {
             method: 'POST',
-             headers: {
-        'content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      },
-      body: JSON.stringify(user)
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(user)
         });
 
+      const data = await res.json()
 
-        return res.json();
+      return data
     } catch (err) {
         throw err;
     }
 };
 
-const downvoteTopic = async (topicId) => {
+const downvoteTopic = async (user, topicId) => {
     try {
         const res = await fetch(`${BASE_URL}/${topicId}/downvote`, {
             method: 'POST',
-               headers: {
-        'content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      },
-      body: JSON.stringify(user)
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(user)
         });
-
         
-        return res.json();
+      const data = await res.json()
+
+      return data
     } catch (err) {
         throw err;
     }
