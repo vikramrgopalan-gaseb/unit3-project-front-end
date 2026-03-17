@@ -16,7 +16,7 @@ const EditUserClass = (props) => {
         }
     }, [classes])
     return (
-        <main>
+        <main className="user-edit-class">
             <h2>{selectedClass.title}</h2>
             <p>{selectedClass.description}</p>
             <p>Maximum class size: {selectedClass.capacity}</p>

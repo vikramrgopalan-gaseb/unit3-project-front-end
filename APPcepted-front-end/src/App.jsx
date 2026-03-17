@@ -40,8 +40,8 @@ function App() {
   }, [])
 
   return (
-    <>
-      <NavBar />
+    <div className='app-body'>
+      <  NavBar />
       <Routes>
         <Route path='/' element={<HomePage setSelectedClass={setSelectedClass} setSelectedTopic={setSelectedTopic} />} />
         <Route path='/classes/homepage/:classId' element={<EditUserClass selectedClass={selectedClass} setSelectedClass={setSelectedClass} classes={classes} fetchClassList={fetchClassList}/>} />
@@ -55,7 +55,7 @@ function App() {
         <Route path='/classes/my-classes/:classId' element={<EditMyClass selectedClass={selectedClass} fetchClassList={fetchClassList} />} />
         <Route path='/topics/my-topics/:topicId' element={<EditMyTopic selectedTopic={selectedTopic} fetchTopicList={fetchTopicList}/>} />
       </Routes>
-    </>
+    </div>
   )
 }
 

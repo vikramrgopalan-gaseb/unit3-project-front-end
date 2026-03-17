@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -16,12 +16,35 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+
+/* .app-title {
+  display: flex;
+  color: gold;
+}
+
+.classes-and-topics-list {
+  display: flex;
+  flex-direction: row;
+  color: gold;
+  justify-content: space-between;
 }
 
 .nav-bar {
   display: flex;
-  color: lightskyblue;
+ 
   flex-direction: row;
+  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.link {
+ color: lightblue;
+}
+
+.routes-appjsx {
+  display: flex;
+  justify-content: space-between;
 }
 
 .universal-link {
@@ -60,18 +83,18 @@
 
 .confirm-password-field {
   color: chartreuse;
-}
+} */
 
-@keyframes logo-spin {
+/* @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
@@ -83,4 +106,97 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+/* .routes-appjsx {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+} */
+
+.app-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-direction: row;
+}
+
+.homepage-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.classes-and-topics-list {
+  display: flex;
+  flex-direction: row;
+  color: gold;
+}
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-class-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-classes-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-class-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-edit-class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-topic-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-topic-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-edit-topic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-topic-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

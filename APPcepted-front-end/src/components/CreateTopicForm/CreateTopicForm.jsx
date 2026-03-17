@@ -38,29 +38,34 @@ const CreateTopic = (props) => {
 // RENDERING
 
   return (
-    <div className="topic-form-container">
-      <h2>I Want To Learn Something New</h2>
-      <form onSubmit={handleSubmit} className="topic-form">
-        <input
+    <form className="create-topic-form" onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="title">I Want To Learn</label>
+          <input
           name="title"
           placeholder="Topic Title"
           value={formData.title}
           onChange={handleChange}
           required
-        />
+          />
+      </div>
+
+      <div>
+        <label htmlFor="description">Description:</label>
         <textarea
           name="description"
           placeholder="Describe what you want to learn..."
           value={formData.description}
           onChange={handleChange}
           required
-        />
+        ></textarea>
+        </div>
+
         <div className="create-topic-button">
         <button type="submit">Submit Request</button>
         <button onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
-    </div>
   );
 };
 

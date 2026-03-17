@@ -37,7 +37,7 @@ const EditUserTopic = (props) => {
     };
 
     return (
-        <main className="topic-user-page">
+        <main className="user-edit-topic">
             <h2>{selectedTopic?.title}</h2>
             <p>{selectedTopic?.description}</p>
             
