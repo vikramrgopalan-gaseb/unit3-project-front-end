@@ -1,15 +1,10 @@
-import { useState, useContext, useEffect } from "react";
-import { UserContext } from "../../context/UserContext";
+import { useState, } from "react";
 import { useNavigate } from "react-router";
 import { editTopic, deleteTopic } from "../../services/topicServices";
 
 const EditMyTopic = (props) => {    
     const selectedTopic = props.selectedTopic
-    const { user } = useContext(UserContext)
     const navigate = useNavigate()
-     useEffect(() => {
-        
-    })
 
      const [formData, setFormData] = useState({
         title: selectedTopic.title,

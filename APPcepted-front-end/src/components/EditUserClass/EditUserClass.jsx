@@ -1,16 +1,20 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { enrollInClass, disenrollInClass } from "../../services/homeServices";
 
 const EditUserClass = (props) => {
-    let selectedClass = props.selectedClass
+    const { selectedClass, setSelectedClass, classes, fetchClassList } = props
     const { user } = useContext(UserContext)
 
     useEffect(() => {
-        const updatedSelectedClass = props.classes.find((foundClass) => foundClass._id === selectedClass._id)
-        props.setSelectedClass(updatedSelectedClass)
-        selectedClass = updatedSelectedClass
-    }, [props.classes])
+        if(!selectedClass._id || !classes.length) {
+            return
+        }
+        const updatedSelectedClass = classes.find((foundClass) => foundClass._id === selectedClass._id)
+        if(updatedSelectedClass) {
+            setSelectedClass(updatedSelectedClass)
+        }
+    }, [classes])
     return (
         <main>
             <h2>{selectedClass.title}</h2>
@@ -20,9 +24,9 @@ const EditUserClass = (props) => {
             {selectedClass.enrollment.length < selectedClass.capacity ? (
                 user ? (
                     //if the user is signed in, render the enroll button
-                    <button onClick={() => {
+                    <button onClick={async () => {
                         enrollInClass(user, selectedClass._id)
-                        props.fetchClassList()
+                        await fetchClassList()
                     }}>Enroll</button>
                 ) : (
                     //else display the amount of open slots
@@ -42,9 +46,9 @@ const EditUserClass = (props) => {
                                 {student.username}
                                 {/* if the enrolled student is the logged in student, render a disenroll button */}
                                 {student._id === user._id ? (
-                                    <button onClick={() => {
+                                    <button onClick={async () => {
                                         disenrollInClass(user, selectedClass._id)
-                                        props.fetchClassList()
+                                        await fetchClassList()
                                     }}>Disenroll</button>
                                 ) : (null)}
                             </li>

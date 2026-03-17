@@ -1,12 +1,10 @@
 //imports
-import { useState, useContext, useEffect } from "react";
-import { UserContext } from "../../context/UserContext";
+import { useState, } from "react";
 import { useNavigate } from "react-router";
 import { editClass, deleteClass } from "../../services/ClassServices";
 
 const EditMyClass = (props) => {    
     const selectedClass = props.selectedClass
-    const { user } = useContext(UserContext)
     const navigate = useNavigate()
     
     const [formData, setFormData] = useState({
