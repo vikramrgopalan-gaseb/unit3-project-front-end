@@ -37,7 +37,7 @@ const EditMyClass = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="edit-class-form" onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="title">Title: </label>
                 <input 

@@ -42,9 +42,9 @@ const HomePage = (props) => {
     }
 
     return (
-        <main>
-            <h1>APPcepted</h1>
-
+        <main className='homepage-text'>
+            <h1 className='app-title'>APPcepted</h1>
+            <div className='classes-and-topics-list'>
             <section className='classes-homepage'>
                 <h2>Classes</h2>                
                 {classes.map((aClass) => (
@@ -65,6 +65,7 @@ const HomePage = (props) => {
                     </div>
                 ))}
             </section>
+            </div>
         </main>
     );
 };

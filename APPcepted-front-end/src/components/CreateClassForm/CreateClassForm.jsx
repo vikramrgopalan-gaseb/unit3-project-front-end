@@ -31,7 +31,7 @@ const CreateNewClass = (props) => {
 
     //form
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="create-class-form" onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="title">Title: </label>
                 <input 

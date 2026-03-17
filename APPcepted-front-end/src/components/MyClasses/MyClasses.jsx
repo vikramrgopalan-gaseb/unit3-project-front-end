@@ -19,7 +19,7 @@ const MyClasses = (props) => {
     ))
 
     return (
-        <main>
+        <main className="my-classes-list">
             <h2>Your Classes</h2>
             {mappedClasses}
         </main>

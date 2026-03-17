@@ -19,7 +19,7 @@ const MyTopics = (props) => {
     ))
 
     return (
-        <main className="my-topics">
+        <main className="my-topics-list">
             <h2>Your Topics</h2>
             {mappedTopics}
         </main>
