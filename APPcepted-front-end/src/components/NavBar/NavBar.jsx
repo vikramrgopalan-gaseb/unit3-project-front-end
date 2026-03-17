@@ -19,18 +19,18 @@ const NavBar =() => {
     return (
         <nav className='nav-bar'>
             {/* universal links */}
-            <ul className='universal-link'>
-                <li><Link className="link" to={'/'}>Homepage</Link></li>
+            <ul>
+                <li><Link className="universal-link" to={'/'}>Homepage</Link></li>
             </ul>
             
             {/* if user exits... */}
             {user ? (
-                <ul className='user-links'>
-                    <li><Link className="link" to={'/classes/create-class'}>Create New Class</Link></li>
-                    <li><Link className="link" to={'/classes/my-classes'}>My Classes</Link></li>
-                    <li><Link className="link" to={'/topics/create-topic'}>Create New Topic</Link></li>
-                    <li><Link className="link" to={'/topics/my-topics'}>My Topics</Link></li>
-                    <li><Link className="link" to={'/'} onClick={handleSignOut}>Sign out</Link></li>
+                <ul>
+                    <li><Link className="user-links" to={'/classes/create-class'}>Create New Class</Link></li>
+                    <li><Link className="user-links" to={'/classes/my-classes'}>My Classes</Link></li>
+                    <li><Link className="user-links" to={'/topics/create-topic'}>Create New Topic</Link></li>
+                    <li><Link className="user-links" to={'/topics/my-topics'}>My Topics</Link></li>
+                    <li><Link className="user-links" to={'/'} onClick={handleSignOut}>Sign out</Link></li>
                 </ul>
             // ... else ...
             ) : (

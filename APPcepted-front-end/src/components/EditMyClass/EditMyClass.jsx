@@ -49,7 +49,8 @@ const EditMyClass = (props) => {
             </div>
             <div>
                 <label htmlFor="description">Description: </label>
-                <textarea 
+                <textarea
+                    className="edit-class-description" 
                     type="text"
                     id="desctiption"
                     value={description}

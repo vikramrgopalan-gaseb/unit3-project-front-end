@@ -53,6 +53,7 @@ const CreateTopic = (props) => {
       <div>
         <label htmlFor="description">Description:</label>
         <textarea
+          className="create-topic-description"
           name="description"
           placeholder="Describe what you want to learn..."
           value={formData.description}

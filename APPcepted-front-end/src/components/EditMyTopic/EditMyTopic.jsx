@@ -41,6 +41,7 @@ const EditMyTopic = (props) => {
             <div>
                 <label htmlFor="description">Description: </label>
                 <textarea 
+                    className="edit-topic-description"
                     type="text"
                     id="desctiption"
                     value={description}

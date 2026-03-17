@@ -34,7 +34,8 @@ const CreateNewClass = (props) => {
         <form className="create-class-form" onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="title">Title: </label>
-                <input 
+                <input
+                    className="create-class-title" 
                     type="text"
                     id="title"
                     value={title}
@@ -46,6 +47,7 @@ const CreateNewClass = (props) => {
             <div>
                 <label htmlFor="description">Description: </label>
                 <textarea
+                    className="create-class-description" 
                     type="text"
                     id="desctiption"
                     value={description}
@@ -57,6 +59,7 @@ const CreateNewClass = (props) => {
             <div>
                 <label htmlFor="capacity">Class Size: </label>
                 <input 
+                    className="create-class-size"
                     type="number"
                     id="capacity"
                     value={capacity}
