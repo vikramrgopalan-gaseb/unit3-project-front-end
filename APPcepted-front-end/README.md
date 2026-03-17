@@ -35,6 +35,14 @@ In its present form, there is no way for users to communicate with each other. T
 
 Because classes are unrelated to topics, if there is one of each for the same subject, there is no way to correlate them. One possible enhancement, then, would be to implement a branching system, where a user could create a class based on a topic and auto enroll the first few people who upvoted it.
 
+As the list of topics and classes grows, it becomes important to categorize and organize these pieces of data. One solution is to add a cateogry/subject field and then build a filter or individual pages to only show classes and topics in a particular subject.
+
+### Attributions
+
+Background image: https://ntvb.tmsimg.com/assets/p159789_v_h10_ab.jpg?w=1280&h=720
+
+Homepage image: https://content.presentermedia.com/files/clipart/00002000/2995/blank_bulletin_board_800_wht.jpg
+
 ### Technologies Used
 
 The front end is programmed in Javascript with React, using the react-router library.
